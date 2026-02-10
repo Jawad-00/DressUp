@@ -1,260 +1,471 @@
-🛍️ DressUp — Full-Stack Streetwear E-Commerce Platform
+# 🛍️ DressUp — Full-Stack Streetwear E-Commerce Platform
 
-DressUp is a modern, full-stack e-commerce web application built for a premium streetwear brand.
-It features a clean, dark UI, complete admin management, secure authentication, and a scalable backend architecture.
+<div align="center">
 
-The project is designed to closely resemble real-world production systems used in modern e-commerce platforms.
+![DressUp Banner](https://img.shields.io/badge/DressUp-Streetwear-black?style=for-the-badge)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 
-✨ Features
-🧑‍💻 User Features
+**A modern, full-stack e-commerce web application built for a premium streetwear brand.**
 
-Browse products by category
+[Features](#-features) • [Demo](#-demo) • [Tech Stack](#-tech-stack) • [Getting Started](#-getting-started) • [API Documentation](#-api-documentation)
 
-View featured products on the home page
+</div>
 
-Product detail pages with images, pricing, and variants (sizes)
+---
 
-Add products to cart with size & quantity
+## 📖 About The Project
 
-Persistent cart using localStorage
+DressUp is a production-ready e-commerce platform featuring a clean, dark UI, complete admin management system, secure authentication, and scalable backend architecture. Built with modern web technologies, it closely resembles real-world systems used in contemporary e-commerce applications.
 
-Secure checkout with authentication
+### 🎯 Key Highlights
 
-Order placement with shipping details
+- 🔐 Secure JWT-based authentication
+- 🛒 Persistent shopping cart with localStorage
+- 👨‍💼 Comprehensive admin dashboard
+- 📦 Complete order management system
+- 🖼️ Multi-image upload support
+- 📱 Fully responsive design
+- ⚡ Real-time stock management
 
-Order success confirmation
+---
 
-View personal order history
+## ✨ Features
 
-🛠️ Admin Features
+### 🧑‍💻 User Features
 
-Secure admin authentication
+- **Product Browsing**
+  - Browse products by category
+  - View featured products on homepage
+  - Detailed product pages with images, pricing, and size variants
+  
+- **Shopping Experience**
+  - Add products to cart with size & quantity selection
+  - Persistent cart using localStorage
+  - Secure checkout flow with authentication
+  
+- **Order Management**
+  - Place orders with shipping details
+  - Order success confirmation
+  - View complete order history
 
-Add, update, activate/deactivate products
+### 🛠️ Admin Features
 
-Upload multiple product images
+- **Authentication & Security**
+  - Secure admin login
+  - Role-based access control
+  
+- **Product Management**
+  - Add, update, activate/deactivate products
+  - Upload multiple product images
+  - Manage product variants (sizes & stock levels)
+  - Mark products as featured
+  
+- **Category Management**
+  - Create and update categories
+  - Upload category display images
+  - Activate/deactivate categories
+  - Soft delete support
+  
+- **Order Management**
+  - View all customer orders
+  - Update order status
+  - Track order details
 
-Manage product variants (size & stock)
+---
 
-Create, update, activate/deactivate categories
+## 🧱 Tech Stack
 
-Upload category display images
+### Frontend
+```
+⚛️  React.js (Vite)
+🛣️  React Router
+🎨 Tailwind CSS
+📡 Axios
+💾 LocalStorage
+```
 
-Mark products as featured
+### Backend
+```
+🟢 Node.js
+⚡ Express.js
+🍃 MongoDB + Mongoose
+🔐 JWT Authentication
+✅ Zod (Validation)
+```
 
-View and manage all orders
+### Tools & Services
+```
+📮 Postman (API Testing)
+☁️  Cloudinary (Image Hosting)
+📦 Git & GitHub
+```
 
-Soft delete support for categories
+---
 
-🧱 Tech Stack
-Frontend
+## 📁 Project Structure
 
-React.js (Vite)
-
-React Router
-
-Tailwind CSS
-
-Axios
-
-LocalStorage (cart & auth persistence)
-
-Backend
-
-Node.js
-
-Express.js
-
-MongoDB + Mongoose
-
-JWT Authentication
-
-Zod (request validation)
-
-Other Tools
-
-Postman (API testing)
-
-Cloudinary / Image Upload Service
-
-Git & GitHub
-
-📁 Project Structure
+```
 DressUp/
-├── client/                     # Frontend (React)
+│
+├── client/                     # Frontend Application
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   │   ├── admin/
-│   │   │   ├── Home.jsx
-│   │   │   ├── Shop.jsx
-│   │   │   ├── Product.jsx
-│   │   │   ├── Cart.jsx
-│   │   │   ├── Checkout.jsx
-│   │   │   └── Login/Register
-│   │   ├── lib/                # API, auth, cart helpers
-│   │   └── App.jsx
+│   │   ├── components/        # Reusable UI components
+│   │   ├── pages/             # Page components
+│   │   │   ├── admin/         # Admin dashboard pages
+│   │   │   ├── Home.jsx       # Homepage
+│   │   │   ├── Shop.jsx       # Product listing
+│   │   │   ├── Product.jsx    # Product details
+│   │   │   ├── Cart.jsx       # Shopping cart
+│   │   │   ├── Checkout.jsx   # Checkout page
+│   │   │   └── Auth/          # Login/Register
+│   │   ├── lib/               # Utilities & helpers
+│   │   │   ├── api.js         # API configuration
+│   │   │   ├── auth.js        # Auth helpers
+│   │   │   └── cart.js        # Cart management
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   └── package.json
 │
-├── server/                     # Backend (Node + Express)
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── middleware/
-│   ├── schemas/                # Zod validation
-│   └── server.js
+├── server/                     # Backend Application
+│   ├── controllers/           # Request handlers
+│   │   ├── authController.js
+│   │   ├── productController.js
+│   │   ├── categoryController.js
+│   │   └── orderController.js
+│   ├── models/                # Database models
+│   │   ├── User.js
+│   │   ├── Product.js
+│   │   ├── Category.js
+│   │   └── Order.js
+│   ├── routes/                # API routes
+│   ├── middleware/            # Custom middleware
+│   │   ├── auth.js
+│   │   └── adminAuth.js
+│   ├── schemas/               # Zod validation schemas
+│   ├── utils/                 # Utility functions
+│   ├── server.js              # Entry point
+│   └── package.json
 │
-└── README.md
+├── .gitignore
+├── README.md
+└── LICENSE
+```
 
-🔐 Authentication & Authorization
+---
 
-JWT-based authentication
+## 🔐 Authentication & Authorization
 
-Tokens stored securely in localStorage
+- **JWT-based authentication** for secure user sessions
+- Tokens stored in **localStorage** with automatic refresh
+- **Axios interceptor** automatically attaches authorization headers
+- **Role-based access control**:
+  - `user` - Customer access
+  - `admin` - Full platform access
+- Protected admin routes for sensitive operations
 
-Axios interceptor automatically attaches Authorization header
+---
 
-Role-based access control:
+## 🗄️ Data Models
 
-user
+### Product Model
+```javascript
+{
+  title: String,
+  slug: String,
+  description: String,
+  price: Number,
+  compareAtPrice: Number,
+  category: ObjectId (ref: Category),
+  images: [String],
+  variants: [{ size: String, stock: Number }],
+  isFeatured: Boolean,
+  isActive: Boolean,
+  createdAt: Date,
+  updatedAt: Date
+}
+```
 
-admin
+### Category Model
+```javascript
+{
+  name: String,
+  slug: String,
+  image: String,
+  isActive: Boolean,
+  isDeleted: Boolean,
+  createdAt: Date,
+  updatedAt: Date
+}
+```
 
-Protected admin routes (products, categories, orders)
+### Order Model
+```javascript
+{
+  user: ObjectId (ref: User),
+  items: [{
+    product: Object,
+    quantity: Number,
+    size: String,
+    price: Number
+  }],
+  shippingDetails: {
+    name: String,
+    address: String,
+    city: String,
+    postalCode: String,
+    phone: String
+  },
+  totalAmount: Number,
+  status: String,
+  createdAt: Date
+}
+```
 
-🧾 Product & Category Model Overview
-Product
+---
 
-Title
+## 🚀 Getting Started
 
-Slug
+### Prerequisites
 
-Description
+- Node.js (v16 or higher)
+- MongoDB (local or Atlas)
+- npm or yarn
+- Cloudinary account (for image uploads)
 
-Price / Compare-At Price
+### 1️⃣ Clone the Repository
 
-Category reference
-
-Images (multiple)
-
-Variants (size + stock)
-
-Featured flag
-
-Active flag
-
-Category
-
-Name
-
-Slug
-
-Optional image (display picture)
-
-Active flag
-
-Soft delete support
-
-🖼️ Image Uploads
-
-Supports image uploads for:
-
-Products
-
-Categories
-
-Multiple image uploads supported for products
-
-Images stored via upload service (e.g., Cloudinary)
-
-URLs stored in MongoDB
-
-🛒 Order Flow
-
-User adds items to cart
-
-Cart persists via localStorage
-
-Checkout requires login
-
-Shipping details collected
-
-Order created in database with product snapshots
-
-Cart cleared after successful order
-
-Order success page displayed
-
-🚀 Getting Started
-1️⃣ Clone the Repository
+```bash
 git clone https://github.com/yourusername/dressup.git
 cd dressup
+```
 
-2️⃣ Backend Setup
+### 2️⃣ Backend Setup
+
+```bash
 cd server
 npm install
+```
 
+Create a `.env` file in the `server` directory:
 
-Create a .env file:
-
+```env
 PORT=5000
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_secret_key
-CLOUDINARY_API_KEY=xxxx
-CLOUDINARY_SECRET=xxxx
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_super_secret_jwt_key
+CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+```
 
+Start the backend server:
 
-Run backend:
-
+```bash
 npm run dev
+```
 
-3️⃣ Frontend Setup
+The server will run on `http://localhost:5000`
+
+### 3️⃣ Frontend Setup
+
+Open a new terminal:
+
+```bash
 cd client
 npm install
+```
+
+Create a `.env` file in the `client` directory:
+
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+Start the development server:
+
+```bash
 npm run dev
+```
 
-🧪 API Testing
+The app will run on `http://localhost:5173`
 
-All APIs tested using Postman
+### 4️⃣ Access the Application
 
-Proper status codes and error handling
+- **Frontend**: http://localhost:5173
+- **Backend API**: http://localhost:5000/api
+- **Admin Panel**: http://localhost:5173/admin
 
-Input validation via Zod
+---
 
-🎨 UI & Design
+## 🧪 API Documentation
 
-Dark, premium streetwear aesthetic
+### Authentication Endpoints
 
-Glassmorphism & gradient accents
+```http
+POST   /api/auth/register      # Register new user
+POST   /api/auth/login          # Login user
+GET    /api/auth/me             # Get current user
+```
 
-Responsive layout (mobile → desktop)
+### Product Endpoints
 
-Smooth hover transitions
+```http
+GET    /api/products            # Get all products
+GET    /api/products/:id        # Get single product
+POST   /api/products            # Create product (Admin)
+PUT    /api/products/:id        # Update product (Admin)
+DELETE /api/products/:id        # Delete product (Admin)
+GET    /api/products/featured   # Get featured products
+```
 
-Modern card-based layout
+### Category Endpoints
 
-📈 Future Enhancements
+```http
+GET    /api/categories          # Get all categories
+GET    /api/categories/:id      # Get single category
+POST   /api/categories          # Create category (Admin)
+PUT    /api/categories/:id      # Update category (Admin)
+DELETE /api/categories/:id      # Soft delete category (Admin)
+```
 
-Payment gateway integration (Stripe / Razorpay)
+### Order Endpoints
 
-Wishlist functionality
+```http
+POST   /api/orders              # Create order
+GET    /api/orders              # Get user orders
+GET    /api/orders/all          # Get all orders (Admin)
+PUT    /api/orders/:id          # Update order status (Admin)
+```
 
-Search & filtering
+> 📝 For detailed API documentation, import the Postman collection from `/docs/postman_collection.json`
 
-Product reviews & ratings
+---
 
-Admin dashboard analytics
+## 🎨 UI & Design
 
-Email notifications
+- **Dark Theme**: Premium streetwear aesthetic
+- **Glassmorphism**: Modern card-based layouts with gradient accents
+- **Responsive**: Mobile-first design (320px → 1920px+)
+- **Animations**: Smooth hover transitions and micro-interactions
+- **Typography**: Clean, readable fonts optimized for e-commerce
 
-SSR / SEO optimization
+---
 
-👤 Author
+## 🛒 Order Flow
 
-Jawad Bin Hamid
-Full-Stack Developer
-Passionate about building scalable, production-ready web applications.
+```mermaid
+graph LR
+    A[Browse Products] --> B[Add to Cart]
+    B --> C[View Cart]
+    C --> D{Logged In?}
+    D -->|No| E[Login/Register]
+    D -->|Yes| F[Checkout]
+    E --> F
+    F --> G[Enter Shipping Details]
+    G --> H[Place Order]
+    H --> I[Order Confirmation]
+    I --> J[Order History]
+```
 
-📜 License
+---
 
-This project is for learning and portfolio purposes.
-You’re free to explore, modify, and improve it.
+## 📸 Screenshots
+
+### Homepage
+![Homepage](./screenshots/home.png)
+
+### Product Details
+![Product](./screenshots/product.png)
+
+### Admin Dashboard
+![Admin](./screenshots/admin.png)
+
+> Add your screenshots in a `/screenshots` folder
+
+---
+
+## 🔧 Environment Variables
+
+### Backend (.env)
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `PORT` | Server port number | Yes |
+| `MONGO_URI` | MongoDB connection string | Yes |
+| `JWT_SECRET` | Secret key for JWT tokens | Yes |
+| `CLOUDINARY_CLOUD_NAME` | Cloudinary cloud name | Yes |
+| `CLOUDINARY_API_KEY` | Cloudinary API key | Yes |
+| `CLOUDINARY_API_SECRET` | Cloudinary API secret | Yes |
+
+### Frontend (.env)
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `VITE_API_URL` | Backend API base URL | Yes |
+
+---
+
+## 📈 Future Enhancements
+
+- [ ] Payment gateway integration (Stripe/Razorpay)
+- [ ] Wishlist functionality
+- [ ] Advanced search & filtering
+- [ ] Product reviews & ratings
+- [ ] Admin analytics dashboard
+- [ ] Email notifications (order confirmations, shipping updates)
+- [ ] SSR/SSG for better SEO
+- [ ] Multi-language support
+- [ ] Dark/Light mode toggle
+- [ ] Social media authentication
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👤 Author
+
+**Jawad Bin Hamid**
+
+- Full-Stack Developer
+- Passionate about building scalable, production-ready web applications
+- GitHub: [@jawad](https://github.com/yourusername)
+- LinkedIn: [Jawad Bin Hamid](https://linkedin.com/in/yourprofile)
+- Email: your.email@example.com
+
+---
+
+## 🙏 Acknowledgments
+
+- React.js Team for the amazing framework
+- MongoDB Team for the flexible database
+- Tailwind CSS for the utility-first CSS framework
+- Cloudinary for image hosting
+- The open-source community
+
+---
+
+<div align="center">
+
+**⭐ Star this repo if you find it helpful!**
+
+Made with ❤️ by Jawad Bin Hamid
+
+</div>
